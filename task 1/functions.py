@@ -22,18 +22,15 @@ def max_after_zero(x):
 
 
 def convert_image(img, coefs):
-    """Sum up image channels with weights from coefs array
-
-    input:
-    img -- 3-d numpy array (H x W x 3)
-    coefs -- 1-d numpy array (length 3)
-    output:
-    img -- 2-d numpy array
-
-    Not vectorized implementation.
-    """
-
-    pass
+    res = []
+    for i in range(len(img)):
+        res.append([])
+        for j in range(len(img[i])):
+            color = 0
+            for k in range(len(img[i][j])):
+                color += img[i][j][k] * coefs[k]
+            res.append(color)
+    return res
 
 
 def run_length_encoding(x):
