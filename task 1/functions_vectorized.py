@@ -46,14 +46,4 @@ def run_length_encoding(x):
 
 
 def pairwise_distance(x, y):
-    """Return pairwise object distance.
-
-    input:
-    x, y -- 2d numpy arrays
-    output:
-    distance array -- 2d numpy array
-
-    Vctorized implementation.
-    """
-
-    pass
+    return np.linalg.norm(x[:, np.newaxis, :] - y[np.newaxis, :, :], axis=2)
