@@ -1,3 +1,4 @@
+import math
 def prod_non_zero_diag(x):
     p = 1
     for i in range(len(x)):
@@ -18,17 +19,6 @@ def max_after_zero(x):
         if x[i] == 0:
             mx = max(mx, x[i + 1])
     return mx
-    """Find max element after zero in array.
-
-    input:
-    x -- 1-d numpy array
-    output:
-    maximum element after zero -- integer number
-
-    Not vectorized implementation.
-    """
-
-    pass
 
 
 def convert_image(img, coefs):
@@ -56,18 +46,12 @@ def run_length_encoding(x):
             values.append(i)
             counts.append(1)
     return values, counts
-    pass
 
 
 def pairwise_distance(x, y):
-    """Return pairwise object distance.
-
-    input:
-    x, y -- 2d numpy arrays
-    output:
-    distance array -- 2d numpy array
-
-    Not vectorized implementation.
-    """
-
-    pass
+    dists = []
+    for i in range(len(x)):
+        dists.append([])
+        for j in range(len(y)):
+            dists[-1].append(math.sqrt((x[i][0] - y[j][0]) ** 2 + (x[i][1] - y[j][1]) ** 2))
+    return dists
