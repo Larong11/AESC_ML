@@ -27,6 +27,7 @@ def convert_image(img, coefs):
     return np.dot(img, coefs)
 
 
+
 def run_length_encoding(x):
     changes = np.where(np.diff(x) != 0)[0] + 1
     values = np.concatenate(([x[0]], x[changes]))
